@@ -1,0 +1,30 @@
+.navbar {
+  background-color: rgb(0, 40, 76);
+  width: 100vw;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    height: 4rem;
+    padding: 0 4rem;
+  }
+
+  &__item {
+    list-style: none;
+    font-size: 1.25rem;
+
+    &--left {
+      flex: 1;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: white;
+    padding: 1.35rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
