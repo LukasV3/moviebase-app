@@ -1,13 +1,15 @@
 import React, { useState } from "react";
+import { fetchMovies } from "../../actions";
 import "../scss/Search.scss";
 import ResultsCard from "./ResultsCard";
+import { connect } from "react-redux";
 
-const Search = () => {
+const Search = (props) => {
   const [term, setTerm] = useState("");
   const [searchDebounce, setSearchDebounce] = useState(null);
 
   const searchTerm = (value) => {
-    console.log(value);
+    props.fetchMovies(value);
   };
 
   const onInputChange = (e) => {
@@ -15,6 +17,22 @@ const Search = () => {
 
     setSearchDebounce(clearInterval(searchDebounce));
     setSearchDebounce(setTimeout(() => searchTerm(e.target.value), 500));
+  };
+
+  const renderSearchResults = () => {
+    if (props.movies.length === 0) return;
+
+    return props.movies.map((movie) => {
+      console.log(movie);
+      return (
+        <ResultsCard
+          title={movie.title}
+          releaseDate={movie.release_date}
+          imgageSrc={movie.poster_path}
+          key={movie.id}
+        />
+      );
+    });
   };
 
   return (
@@ -26,13 +44,15 @@ const Search = () => {
         placeholder="Search movie..."
         className="search__input"
       />
-      <div className="search__results">
-        <ResultsCard />
-        <ResultsCard />
-        <ResultsCard />
-      </div>
+      <div className="search__results">{renderSearchResults()}</div>
     </div>
   );
 };
 
-export default Search;
+const mapStateToProps = (state) => {
+  return {
+    movies: state.search,
+  };
+};
+
+export default connect(mapStateToProps, { fetchMovies })(Search);

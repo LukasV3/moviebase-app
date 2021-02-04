@@ -1,10 +1,15 @@
 .results-card {
   display: flex;
 
+  &__img-div {
+    width: 7rem;
+  }
+
   &__img {
-    width: 8rem;
-    height: 11rem;
-    border: 1px solid black;
+    object-fit: cover;
+    width: 100%;
+    display: block;
+    max-height: 11.5rem;
     border-radius: 8px;
   }
 
