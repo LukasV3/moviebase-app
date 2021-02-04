@@ -23,7 +23,6 @@ const Search = (props) => {
     if (props.movies.length === 0) return;
 
     return props.movies.map((movie) => {
-      console.log(movie);
       return (
         <ResultsCard
           title={movie.title}
