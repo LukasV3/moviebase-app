@@ -1,4 +1,4 @@
-import { FETCH_MOVIES } from "./types";
+import { FETCH_MOVIES, ADD_TO_WATCHLIST } from "./types";
 import movies from "../apis/theMovieDatabase";
 
 export const fetchMovies = (query) => {
@@ -9,5 +9,12 @@ export const fetchMovies = (query) => {
       type: FETCH_MOVIES,
       payload: res.data.results,
     });
+  };
+};
+
+export const addToWatchlist = (id) => {
+  return {
+    type: ADD_TO_WATCHLIST,
+    payload: id,
   };
 };
