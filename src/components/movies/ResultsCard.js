@@ -26,8 +26,12 @@ const ResultsCard = ({
         <h3 className="results-card__title">{title}</h3>
         <h5 className="results-card__description">{releaseDate}</h5>
         <div className="results-card__buttons">
-          <button onClick={() => addToWatchlist({ title, id })}>ADD TO WATCHLIST</button>
-          <button onClick={() => addToWatched({ title, id })}>ADD TO WATCHED</button>
+          <button onClick={() => addToWatchlist({ title, id, imgageSrc })}>
+            ADD TO WATCHLIST
+          </button>
+          <button onClick={() => addToWatched({ title, id, imgageSrc })}>
+            ADD TO WATCHED
+          </button>
         </div>
       </div>
     </div>
