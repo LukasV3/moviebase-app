@@ -1,5 +1,11 @@
-import { FETCH_MOVIES, ADD_TO_WATCHLIST, ADD_TO_WATCHED } from "./types";
 import movies from "../apis/theMovieDatabase";
+import {
+  FETCH_MOVIES,
+  ADD_TO_WATCHLIST,
+  ADD_TO_WATCHED,
+  DELETE_FROM_WATCHLIST,
+  DELETE_FROM_WATCHED,
+} from "./types";
 
 export const fetchMovies = (query) => {
   return async (dispatch) => {
@@ -12,6 +18,7 @@ export const fetchMovies = (query) => {
   };
 };
 
+// WATCHLIST
 export const addToWatchlist = (movie) => {
   return {
     type: ADD_TO_WATCHLIST,
@@ -19,9 +26,25 @@ export const addToWatchlist = (movie) => {
   };
 };
 
+export const deleteFromWatchlist = (movie) => {
+  return {
+    type: DELETE_FROM_WATCHLIST,
+    payload: movie,
+  };
+};
+
+// WATCHED
+
 export const addToWatched = (movie) => {
   return {
     type: ADD_TO_WATCHED,
+    payload: movie,
+  };
+};
+
+export const deleteFromWatched = (movie) => {
+  return {
+    type: DELETE_FROM_WATCHED,
     payload: movie,
   };
 };

@@ -27,7 +27,7 @@ const Search = (props) => {
         <ResultsCard
           title={movie.title}
           releaseDate={movie.release_date}
-          imgageSrc={movie.poster_path}
+          imageSrc={movie.poster_path}
           id={movie.id}
           key={movie.id}
         />

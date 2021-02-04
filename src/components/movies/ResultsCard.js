@@ -8,7 +8,7 @@ const base_url = "https://image.tmdb.org/t/p/original";
 const ResultsCard = ({
   title,
   releaseDate,
-  imgageSrc,
+  imageSrc,
   id,
   addToWatchlist,
   addToWatched,
@@ -17,7 +17,7 @@ const ResultsCard = ({
     <div className="results-card">
       <div className="results-card__img-div">
         <img
-          src={`${base_url}${imgageSrc}`}
+          src={`${base_url}${imageSrc}`}
           alt={title}
           className="results-card__img"
         ></img>
@@ -26,10 +26,10 @@ const ResultsCard = ({
         <h3 className="results-card__title">{title}</h3>
         <h5 className="results-card__description">{releaseDate}</h5>
         <div className="results-card__buttons">
-          <button onClick={() => addToWatchlist({ title, id, imgageSrc })}>
+          <button onClick={() => addToWatchlist({ title, id, imageSrc })}>
             ADD TO WATCHLIST
           </button>
-          <button onClick={() => addToWatched({ title, id, imgageSrc })}>
+          <button onClick={() => addToWatched({ title, id, imageSrc })}>
             ADD TO WATCHED
           </button>
         </div>

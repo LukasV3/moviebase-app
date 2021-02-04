@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import "../scss/Watched.scss";
+import { deleteFromWatched } from "../../actions";
 
 const base_url = "https://image.tmdb.org/t/p/original";
 
@@ -11,11 +12,16 @@ const Watched = (props) => {
     return props.watched.map((movie) => {
       return (
         <div className="watched__card" key={movie.id}>
-          <img
-            src={`${base_url}${movie.imgageSrc}`}
-            alt={movie.title}
-            className="watched__img"
-          ></img>
+          <div className="watched__img-div">
+            <img
+              src={`${base_url}${movie.imageSrc}`}
+              alt={movie.title}
+              className="watched__img"
+            ></img>
+          </div>
+          <div className="watched__buttons">
+            <button onClick={() => props.deleteFromWatched(movie.title)}>Delete</button>
+          </div>
         </div>
       );
     });
@@ -35,4 +41,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Watched);
+export default connect(mapStateToProps, { deleteFromWatched })(Watched);
