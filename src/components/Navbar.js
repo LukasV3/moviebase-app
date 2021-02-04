@@ -7,7 +7,7 @@ const Navbar = () => {
     <nav className="navbar">
       <ul className="navbar__list">
         <li className="navbar__item navbar__item--left">
-          <Link to="/" className="navbar__link navbar__link_left">
+          <Link to="/" className="navbar__link">
             Logo
           </Link>
         </li>

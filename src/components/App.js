@@ -12,11 +12,13 @@ const App = () => {
   return (
     <Router history={createBrowserHistory()}>
       <Navbar />
-      <Switch>
-        <Route path="/" exact component={Search} />
-        <Route path="/watchlist" exact component={Watchlist} />
-        <Route path="/watched" exact component={Watched} />
-      </Switch>
+      <div className="container">
+        <Switch>
+          <Route path="/" exact component={Search} />
+          <Route path="/watchlist" exact component={Watchlist} />
+          <Route path="/watched" exact component={Watched} />
+        </Switch>
+      </div>
     </Router>
   );
 };

@@ -1,0 +1,11 @@
+.results-card {
+  display: flex;
+  border: 1px solid black;
+
+  &__img {
+    width: 12rem;
+    height: 15rem;
+    border: 1px solid black;
+    border-radius: 8px;
+  }
+}
