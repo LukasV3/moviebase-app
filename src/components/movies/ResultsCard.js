@@ -1,7 +1,7 @@
 import React from "react";
+import { connect } from "react-redux";
 import "../scss/ResultsCard.scss";
 import { addToWatchlist, addToWatched } from "../../actions";
-import { connect } from "react-redux";
 
 const base_url = "https://image.tmdb.org/t/p/original";
 
@@ -12,7 +12,33 @@ const ResultsCard = ({
   id,
   addToWatchlist,
   addToWatched,
+  watchlist,
 }) => {
+  const renderButtons = () => {
+    const movie = watchlist.find((movie) => movie.title === title);
+    if (movie) {
+      return (
+        <>
+          <button style={{ opacity: "0.5", cursor: "default" }}>ADD TO WATCHLIST</button>
+          <button onClick={() => addToWatched({ title, id, imageSrc })}>
+            ADD TO WATCHED
+          </button>
+        </>
+      );
+    }
+
+    return (
+      <>
+        <button onClick={() => addToWatchlist({ title, id, imageSrc })}>
+          ADD TO WATCHLIST
+        </button>
+        <button onClick={() => addToWatched({ title, id, imageSrc })}>
+          ADD TO WATCHED
+        </button>
+      </>
+    );
+  };
+
   return (
     <div className="results-card">
       <div className="results-card__img-div">
@@ -25,14 +51,7 @@ const ResultsCard = ({
       <div className="results-card__content">
         <h3 className="results-card__title">{title}</h3>
         <h5 className="results-card__description">{releaseDate}</h5>
-        <div className="results-card__buttons">
-          <button onClick={() => addToWatchlist({ title, id, imageSrc })}>
-            ADD TO WATCHLIST
-          </button>
-          <button onClick={() => addToWatched({ title, id, imageSrc })}>
-            ADD TO WATCHED
-          </button>
-        </div>
+        <div className="results-card__buttons">{renderButtons()}</div>
       </div>
     </div>
   );
