@@ -1,2 +1,3 @@
 export const FETCH_MOVIES = "FETCH_MOVIES";
 export const ADD_TO_WATCHLIST = "UPDATE_WATCHLIST";
+export const ADD_TO_WATCHED = "ADD_TO_WATCHED";
