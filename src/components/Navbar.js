@@ -1,13 +1,19 @@
 import React from "react";
-import "./scss/Navbar.scss";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import "./scss/Navbar.scss";
+import { clearFetchedMovies } from "../actions";
 
-const Navbar = () => {
+const Navbar = (props) => {
   return (
     <nav className="navbar">
       <ul className="navbar__list">
         <li className="navbar__item navbar__item--left">
-          <Link to="/" className="navbar__link">
+          <Link
+            to="/"
+            onClick={() => props.clearFetchedMovies()}
+            className="navbar__link"
+          >
             Logo
           </Link>
         </li>
@@ -31,4 +37,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default connect(null, { clearFetchedMovies })(Navbar);

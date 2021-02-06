@@ -5,6 +5,7 @@ import {
   ADD_TO_WATCHED,
   DELETE_FROM_WATCHLIST,
   DELETE_FROM_WATCHED,
+  CLEAR_FETCHED_MOVIES,
 } from "./types";
 
 export const fetchMovies = (query) => {
@@ -15,6 +16,13 @@ export const fetchMovies = (query) => {
       type: FETCH_MOVIES,
       payload: res.data.results,
     });
+  };
+};
+
+export const clearFetchedMovies = () => {
+  return {
+    type: CLEAR_FETCHED_MOVIES,
+    payload: null,
   };
 };
 

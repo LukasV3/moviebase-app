@@ -1,12 +1,16 @@
-import React, { useState } from "react";
-import { fetchMovies } from "../../actions";
+import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
 import "../scss/Search.scss";
 import ResultsCard from "./ResultsCard";
-import { connect } from "react-redux";
+import { fetchMovies } from "../../actions";
 
 const Search = (props) => {
   const [term, setTerm] = useState("");
   const [searchDebounce, setSearchDebounce] = useState(null);
+
+  useEffect(() => {
+    setTerm("");
+  }, []);
 
   const searchTerm = (value) => {
     props.fetchMovies(value);
