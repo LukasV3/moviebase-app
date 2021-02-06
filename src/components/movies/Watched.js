@@ -11,7 +11,12 @@ const Watched = (props) => {
     return props.watched.map((movie) => {
       const renderedButtons = (
         <div className={`watched__buttons`}>
-          <button onClick={() => props.deleteFromWatched(movie.id)}>Delete</button>
+          <button onClick={() => props.deleteFromWatched(movie.id)}>
+            <i className="fas fa-times"></i>
+          </button>
+          <button onClick={() => props.deleteFromWatched(movie.id)}>
+            <i className="fas fa-eye-slash"></i>
+          </button>
         </div>
       );
       return (

@@ -27,15 +27,15 @@ const Search = (props) => {
     if (props.movies.length === 0) return;
 
     return props.movies.map((movie) => {
-      return (
-        <ResultsCard
-          title={movie.title}
-          releaseYear={movie.release_date?.split("-")[0]}
-          imageSrc={movie.poster_path}
-          id={movie.id}
-          key={movie.id}
-        />
-      );
+      const movieObj = {
+        title: movie.title,
+        releaseYear: movie.release_date?.split("-")[0],
+        imagePoster: movie.poster_path,
+        imageBackdrop: movie.backdrop_path,
+        description: movie.overview,
+        id: movie.id,
+      };
+      return <ResultsCard currentMovie={movieObj} key={movie.id} />;
     });
   };
 

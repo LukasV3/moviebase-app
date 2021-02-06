@@ -7,11 +7,12 @@ const MoviesList = ({ listName, movie, renderedButtons }) => {
     <div className={`${listName}__card`}>
       <div className={`${listName}__img-div`}>
         <img
-          src={`${base_url}${movie.imageSrc}`}
+          src={`${base_url}${movie.imagePoster}`}
           alt={movie.title}
           className={`${listName}__img`}
         ></img>
       </div>
+
       {renderedButtons}
     </div>
   );

@@ -5,9 +5,9 @@ import { deleteFromWatchlist, addToWatched } from "../../actions";
 import MoviesList from "./MoviesList";
 
 const Watchlist = (props) => {
-  const addToWatched = (title, id, imageSrc) => {
-    props.deleteFromWatchlist(id);
-    props.addToWatched({ title, id, imageSrc });
+  const addToWatched = (movie) => {
+    props.deleteFromWatchlist(movie.id);
+    props.addToWatched(movie);
   };
 
   const renderWatchlist = () => {
@@ -16,9 +16,11 @@ const Watchlist = (props) => {
     return props.watchlist.map((movie) => {
       const renderedButtons = (
         <div className={`watchlist__buttons`}>
-          <button onClick={() => props.deleteFromWatchlist(movie.id)}>Delete</button>
-          <button onClick={() => addToWatched(movie.title, movie.id, movie.imageSrc)}>
-            Watched
+          <button onClick={() => props.deleteFromWatchlist(movie.id)}>
+            <i className="fas fa-times"></i>
+          </button>
+          <button onClick={() => addToWatched(movie)}>
+            <i className="fas fa-eye"></i>
           </button>
         </div>
       );
