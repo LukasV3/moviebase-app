@@ -20,7 +20,7 @@ const Watched = (props) => {
             ></img>
           </div>
           <div className="watched__buttons">
-            <button onClick={() => props.deleteFromWatched(movie.title)}>Delete</button>
+            <button onClick={() => props.deleteFromWatched(movie.id)}>Delete</button>
           </div>
         </div>
       );

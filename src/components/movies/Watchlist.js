@@ -7,7 +7,7 @@ const base_url = "https://image.tmdb.org/t/p/original";
 
 const Watchlist = (props) => {
   const addToWatched = (title, id, imageSrc) => {
-    props.deleteFromWatchlist(title);
+    props.deleteFromWatchlist(id);
     props.addToWatched({ title, id, imageSrc });
   };
 
@@ -25,7 +25,7 @@ const Watchlist = (props) => {
             ></img>
           </div>
           <div className="watchlist__buttons">
-            <button onClick={() => props.deleteFromWatchlist(movie.title)}>Delete</button>
+            <button onClick={() => props.deleteFromWatchlist(movie.id)}>Delete</button>
             <button onClick={() => addToWatched(movie.title, movie.id, movie.imageSrc)}>
               Watched
             </button>

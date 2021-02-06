@@ -16,19 +16,19 @@ const ResultsCard = ({
   watchlist,
   watched,
 }) => {
-  const onAddToWatchedClick = (title, id, imageSrc) => {
-    if (watchlist.find((movie) => movie.title === title)) {
-      deleteFromWatchlist(title);
+  const onAddToWatchedClick = () => {
+    if (watchlist.find((movie) => movie.id === id)) {
+      deleteFromWatchlist(id);
     }
     addToWatched({ title, id, imageSrc });
   };
 
   const renderButtonClassNames = () => {
-    const watchlistClassName = watchlist.find((movie) => movie.title === title)
+    const watchlistClassName = watchlist.find((movie) => movie.id === id)
       ? "results-card__button--disabled"
       : "";
 
-    const watchedClassName = watched.find((movie) => movie.title === title)
+    const watchedClassName = watched.find((movie) => movie.id === id)
       ? "results-card__button--disabled"
       : "";
 
@@ -45,10 +45,7 @@ const ResultsCard = ({
         >
           ADD TO WATCHLIST
         </button>
-        <button
-          className={watchedClassName}
-          onClick={() => onAddToWatchedClick(title, id, imageSrc)}
-        >
+        <button className={watchedClassName} onClick={() => onAddToWatchedClick()}>
           ADD TO WATCHED
         </button>
       </>

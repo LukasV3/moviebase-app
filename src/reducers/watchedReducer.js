@@ -7,7 +7,7 @@ const watchedReducer = (state = initialState, action) => {
     case ADD_TO_WATCHED:
       return [...state, action.payload];
     case DELETE_FROM_WATCHED:
-      return state.filter((movie) => movie.title !== action.payload);
+      return state.filter((movie) => movie.id !== action.payload);
     default:
       return state;
   }

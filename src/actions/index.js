@@ -34,10 +34,10 @@ export const addToWatchlist = (movie) => {
   };
 };
 
-export const deleteFromWatchlist = (movie) => {
+export const deleteFromWatchlist = (movieId) => {
   return {
     type: DELETE_FROM_WATCHLIST,
-    payload: movie,
+    payload: movieId,
   };
 };
 
@@ -50,9 +50,9 @@ export const addToWatched = (movie) => {
   };
 };
 
-export const deleteFromWatched = (movie) => {
+export const deleteFromWatched = (movieId) => {
   return {
     type: DELETE_FROM_WATCHED,
-    payload: movie,
+    payload: movieId,
   };
 };
