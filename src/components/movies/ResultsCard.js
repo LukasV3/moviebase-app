@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import "../scss/ResultsCard.scss";
-import { addToWatchlist, addToWatched } from "../../actions";
+import { addToWatchlist, addToWatched, deleteFromWatchlist } from "../../actions";
 
 const base_url = "https://image.tmdb.org/t/p/original";
 
@@ -11,28 +11,44 @@ const ResultsCard = ({
   imageSrc,
   id,
   addToWatchlist,
+  deleteFromWatchlist,
   addToWatched,
   watchlist,
+  watched,
 }) => {
-  const renderButtons = () => {
-    const movie = watchlist.find((movie) => movie.title === title);
-    if (movie) {
-      return (
-        <>
-          <button style={{ opacity: "0.5", cursor: "default" }}>ADD TO WATCHLIST</button>
-          <button onClick={() => addToWatched({ title, id, imageSrc })}>
-            ADD TO WATCHED
-          </button>
-        </>
-      );
+  const onAddToWatchedClick = (title, id, imageSrc) => {
+    if (watchlist.find((movie) => movie.title === title)) {
+      deleteFromWatchlist(title);
     }
+    addToWatched({ title, id, imageSrc });
+  };
 
+  const renderButtonClassNames = () => {
+    const watchlistClassName = watchlist.find((movie) => movie.title === title)
+      ? "results-card__button--disabled"
+      : "";
+
+    const watchedClassName = watched.find((movie) => movie.title === title)
+      ? "results-card__button--disabled"
+      : "";
+
+    return { watchlistClassName, watchedClassName };
+  };
+
+  const renderButtons = () => {
+    const { watchlistClassName, watchedClassName } = renderButtonClassNames();
     return (
       <>
-        <button onClick={() => addToWatchlist({ title, id, imageSrc })}>
+        <button
+          className={watchlistClassName || watchedClassName}
+          onClick={() => addToWatchlist({ title, id, imageSrc })}
+        >
           ADD TO WATCHLIST
         </button>
-        <button onClick={() => addToWatched({ title, id, imageSrc })}>
+        <button
+          className={watchedClassName}
+          onClick={() => onAddToWatchedClick(title, id, imageSrc)}
+        >
           ADD TO WATCHED
         </button>
       </>
@@ -64,4 +80,8 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { addToWatchlist, addToWatched })(ResultsCard);
+export default connect(mapStateToProps, {
+  addToWatchlist,
+  addToWatched,
+  deleteFromWatchlist,
+})(ResultsCard);
