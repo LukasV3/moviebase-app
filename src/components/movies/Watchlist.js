@@ -2,8 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import "../scss/Watchlist.scss";
 import { deleteFromWatchlist, addToWatched } from "../../actions";
-
-const base_url = "https://image.tmdb.org/t/p/original";
+import MoviesList from "./MoviesList";
 
 const Watchlist = (props) => {
   const addToWatched = (title, id, imageSrc) => {
@@ -15,22 +14,21 @@ const Watchlist = (props) => {
     if (props.watchlist.length === 0) return;
 
     return props.watchlist.map((movie) => {
-      return (
-        <div className="watchlist__card" key={movie.id}>
-          <div className="watchlist__img-div">
-            <img
-              src={`${base_url}${movie.imageSrc}`}
-              alt={movie.title}
-              className="watchlist__img"
-            ></img>
-          </div>
-          <div className="watchlist__buttons">
-            <button onClick={() => props.deleteFromWatchlist(movie.id)}>Delete</button>
-            <button onClick={() => addToWatched(movie.title, movie.id, movie.imageSrc)}>
-              Watched
-            </button>
-          </div>
+      const renderedButtons = (
+        <div className={`watchlist__buttons`}>
+          <button onClick={() => props.deleteFromWatchlist(movie.id)}>Delete</button>
+          <button onClick={() => addToWatched(movie.title, movie.id, movie.imageSrc)}>
+            Watched
+          </button>
         </div>
+      );
+      return (
+        <MoviesList
+          listName="watchlist"
+          movie={movie}
+          key={movie.id}
+          renderedButtons={renderedButtons}
+        />
       );
     });
   };
@@ -44,9 +42,7 @@ const Watchlist = (props) => {
 };
 
 const mapStateToProps = (state) => {
-  return {
-    watchlist: state.watchlist,
-  };
+  return { watchlist: state.watchlist };
 };
 
 export default connect(mapStateToProps, { deleteFromWatchlist, addToWatched })(Watchlist);

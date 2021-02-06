@@ -30,7 +30,7 @@ const Search = (props) => {
       return (
         <ResultsCard
           title={movie.title}
-          releaseDate={movie.release_date}
+          releaseYear={movie.release_date?.split("-")[0]}
           imageSrc={movie.poster_path}
           id={movie.id}
           key={movie.id}

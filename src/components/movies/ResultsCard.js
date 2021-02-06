@@ -7,7 +7,7 @@ const base_url = "https://image.tmdb.org/t/p/original";
 
 const ResultsCard = ({
   title,
-  releaseDate,
+  releaseYear,
   imageSrc,
   id,
   addToWatchlist,
@@ -24,19 +24,13 @@ const ResultsCard = ({
   };
 
   const renderButtonClassNames = () => {
-    const watchlistClassName = watchlist.find((movie) => movie.id === id)
-      ? "results-card__button--disabled"
-      : "";
-
-    const watchedClassName = watched.find((movie) => movie.id === id)
-      ? "results-card__button--disabled"
-      : "";
-
-    return { watchlistClassName, watchedClassName };
+    return [watchlist, watched].map((moviesList) =>
+      moviesList.find((movie) => movie.id === id) ? "results-card__button--disabled" : ""
+    );
   };
 
   const renderButtons = () => {
-    const { watchlistClassName, watchedClassName } = renderButtonClassNames();
+    const [watchlistClassName, watchedClassName] = renderButtonClassNames();
     return (
       <>
         <button
@@ -63,7 +57,7 @@ const ResultsCard = ({
       </div>
       <div className="results-card__content">
         <h3 className="results-card__title">{title}</h3>
-        <h5 className="results-card__description">{releaseDate}</h5>
+        <h5 className="results-card__description">{releaseYear}</h5>
         <div className="results-card__buttons">{renderButtons()}</div>
       </div>
     </div>
