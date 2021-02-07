@@ -1,10 +1,15 @@
 import React from "react";
 import { connect } from "react-redux";
 import "../scss/Watched.scss";
-import { deleteFromWatched } from "../../actions";
+import { deleteFromWatched, addToWatchlist } from "../../actions";
 import MoviesList from "./MoviesList";
 
 const Watched = (props) => {
+  const onDeleteFromWatchedClick = (movie) => {
+    props.deleteFromWatched(movie.id);
+    props.addToWatchlist(movie);
+  };
+
   const renderWatched = () => {
     if (props.watched.length === 0) return;
 
@@ -14,7 +19,7 @@ const Watched = (props) => {
           <button onClick={() => props.deleteFromWatched(movie.id)}>
             <i className="fas fa-times"></i>
           </button>
-          <button onClick={() => props.deleteFromWatched(movie.id)}>
+          <button onClick={() => onDeleteFromWatchedClick(movie)}>
             <i className="fas fa-eye-slash"></i>
           </button>
         </div>
@@ -42,4 +47,4 @@ const mapStateToProps = (state) => {
   return { watched: state.watched };
 };
 
-export default connect(mapStateToProps, { deleteFromWatched })(Watched);
+export default connect(mapStateToProps, { deleteFromWatched, addToWatchlist })(Watched);
