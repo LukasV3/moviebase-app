@@ -33,6 +33,7 @@ const Search = (props) => {
         imagePoster: movie.poster_path,
         imageBackdrop: movie.backdrop_path,
         description: movie.overview,
+        rating: movie.vote_average,
         id: movie.id,
       };
       return <ResultsCard currentMovie={movieObj} key={movie.id} />;

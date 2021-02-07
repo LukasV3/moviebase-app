@@ -21,8 +21,15 @@
   &__link {
     text-decoration: none;
     color: white;
-    padding: 1.35rem;
+    padding: 1.3rem;
     font-weight: 500;
+
+    &--logo {
+      font-family: "Big Shoulders Stencil Display", cursive;
+      letter-spacing: 1.5px;
+      font-size: 2.25rem;
+      padding: 0.5rem;
+    }
 
     &--blue {
       display: flex;
@@ -37,7 +44,7 @@
     }
 
     &:hover {
-      text-decoration: underline;
+      opacity: 0.8;
     }
   }
 }

@@ -12,9 +12,9 @@ const Navbar = (props) => {
           <Link
             to="/"
             onClick={() => props.clearFetchedMovies()}
-            className="navbar__link"
+            className="navbar__link navbar__link--logo"
           >
-            Logo
+            MOVIEBASE
           </Link>
         </li>
         <li className="navbar__item">

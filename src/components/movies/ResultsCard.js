@@ -55,7 +55,13 @@ const ResultsCard = ({
         ></img>
       </div>
       <div className="results-card__content">
-        <h3 className="results-card__title">{currentMovie.title}</h3>
+        <h3 className="results-card__title">
+          {currentMovie.title}
+          <span className="results-card__rating">
+            <span className="results-card__rating--span">{currentMovie.rating}</span>
+            /10
+          </span>
+        </h3>
         <h5 className="results-card__description">{currentMovie.releaseYear}</h5>
         <div className="results-card__buttons">{renderButtons()}</div>
       </div>
