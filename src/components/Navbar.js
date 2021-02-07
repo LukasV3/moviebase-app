@@ -28,7 +28,8 @@ const Navbar = (props) => {
           </Link>
         </li>
         <li className="navbar__item">
-          <Link to="/" className="navbar__link">
+          <Link to="/" className="navbar__link navbar__link--blue">
+            <i className="fas fa-search"></i>
             Search
           </Link>
         </li>
