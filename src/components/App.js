@@ -18,11 +18,11 @@ const App = () => {
           <Route path="/" exact component={Search} />
           <Route path="/watchlist" exact component={Watchlist} />
           <Route path="/watched" exact component={Watched} />
-          <Route path="/watchlist/detail/:id" exact>
+          <Route path="/watchlist/:id" exact>
             <Watchlist />
             <MovieDetail />
           </Route>
-          <Route path="/watched/detail/:id" exact>
+          <Route path="/watched/:id" exact>
             <Watched />
             <MovieDetail />
           </Route>

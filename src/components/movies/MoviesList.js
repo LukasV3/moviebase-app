@@ -8,13 +8,12 @@ const MoviesList = ({ listName, movie, renderedButtons }) => {
     <div className={`${listName}__card`}>
       <div className={`${listName}__img-div`}>
         <img
-          onClick={() => history.push(`/${listName}/detail/${movie.id}`)}
+          onClick={() => history.push(`/${listName}/${movie.id}`)}
           src={`${base_url}${movie.imagePoster}`}
           alt={movie.title}
           className={`${listName}__img`}
         ></img>
       </div>
-
       {renderedButtons}
     </div>
   );
