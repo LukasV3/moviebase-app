@@ -44,6 +44,10 @@ const MovieDetail = ({ currentMovie }) => {
               <p className="movie-detail__description">{currentMovie.description}</p>
             </div>
           </div>
+
+          <div onClick={() => history.goBack()} className="movie-detail__back-button">
+            <i class="fas fa-times"></i>
+          </div>
         </div>
       </div>
     </div>,
