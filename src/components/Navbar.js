@@ -30,7 +30,7 @@ const Navbar = (props) => {
         <li className="navbar__item">
           <Link to="/" className="navbar__link navbar__link--blue">
             <i className="fas fa-search"></i>
-            Search
+            <p className="navbar__link--search-text">Search</p>
           </Link>
         </li>
       </ul>

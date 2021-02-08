@@ -6,6 +6,7 @@ const base_url = "https://image.tmdb.org/t/p/original";
 const MoviesList = ({ listName, movie, renderedButtons }) => {
   return (
     <div className={`${listName}__card`}>
+      {renderedButtons}
       <div className={`${listName}__img-div`}>
         <img
           onClick={() => history.push(`/${listName}/${movie.id}`)}
@@ -14,7 +15,6 @@ const MoviesList = ({ listName, movie, renderedButtons }) => {
           className={`${listName}__img`}
         ></img>
       </div>
-      {renderedButtons}
     </div>
   );
 };

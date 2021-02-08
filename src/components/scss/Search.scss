@@ -25,3 +25,9 @@
     gap: 2rem;
   }
 }
+
+@media screen and (max-width: 1200px) {
+  .search {
+    padding: 0;
+  }
+}
