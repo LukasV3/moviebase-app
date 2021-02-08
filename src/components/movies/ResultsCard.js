@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import "../scss/ResultsCard.scss";
 import { addToWatchlist, addToWatched, deleteFromWatchlist } from "../../actions";
 
-const base_url = "https://image.tmdb.org/t/p/original";
+const base_url = "https://image.tmdb.org/t/p/w500";
 
 const ResultsCard = ({
   currentMovie,
