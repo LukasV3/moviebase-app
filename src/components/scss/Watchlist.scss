@@ -37,7 +37,8 @@
     transition: transform ease 0.3s;
 
     &:hover {
-      transform: scale(1.025);
+      // transform: translateY(-2px);
+      border: 4px solid #2196f3;
     }
   }
 

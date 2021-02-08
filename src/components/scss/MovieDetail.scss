@@ -9,10 +9,10 @@
     background-color: rgba($color: #000000, $alpha: 0.75);
     top: 0;
     left: 0;
-    z-index: 10;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 10;
 
     &--body {
       position: relative;
@@ -23,12 +23,11 @@
       display: flex;
       align-items: center;
       padding: 3rem;
-      z-index: 100;
+      z-index: 10;
     }
   }
   &__content {
     height: 22rem;
-
     border-radius: 10px 10px 0;
     width: 100%;
     z-index: 110;
