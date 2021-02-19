@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import "../scss/ResultsCard.scss";
+import "../styles/ResultsCard.scss";
 import { addToWatchlist, addToWatched, deleteFromWatchlist } from "../../actions";
 
 const base_url = "https://image.tmdb.org/t/p/w500";

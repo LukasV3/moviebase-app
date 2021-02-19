@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import "../scss/Watchlist.scss";
+import "../styles/Watchlist.scss";
 import { deleteFromWatchlist, addToWatched } from "../../actions";
 import MoviesList from "./MoviesList";
 

@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { connect } from "react-redux";
-import "../scss/MovieDetail.scss";
+import "../styles/MovieDetail.scss";
 import history from "../../history";
 
 const base_url = "https://image.tmdb.org/t/p/w500";

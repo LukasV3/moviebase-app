@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import "../scss/Search.scss";
+import "../styles/Search.scss";
 import ResultsCard from "./ResultsCard";
 import { fetchMovies } from "../../actions";
 
