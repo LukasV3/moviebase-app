@@ -5,9 +5,10 @@
   &__list {
     display: flex;
     align-items: center;
+    margin: 0 auto;
     height: 4rem;
-    padding: 0 4rem;
-    max-width: 20rem;
+    padding: 0 2rem;
+    max-width: 100rem;
   }
 
   &__item {
@@ -34,7 +35,6 @@
 
     &--blue {
       display: flex;
-      gap: 0.5rem;
       align-items: center;
       background-color: #2196f3;
       padding: 0.5rem 0.75rem;
@@ -42,6 +42,10 @@
       color: #010b26;
       font-weight: 600;
       margin-left: 1rem;
+
+      & p {
+        margin-left: 0.5rem;
+      }
     }
 
     &:hover {
@@ -56,11 +60,8 @@
       padding: 0 0.25rem;
     }
 
-    &__item {
-      font-size: 0.75rem;
-    }
-
     &__link {
+      font-size: 1rem;
       padding: 1.3rem 0.5rem;
 
       &--blue {
@@ -71,7 +72,7 @@
       }
 
       &--logo {
-        font-size: 1.35rem;
+        font-size: 1.5rem;
       }
 
       &--search-text {

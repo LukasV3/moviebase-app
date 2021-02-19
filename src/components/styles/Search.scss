@@ -20,15 +20,15 @@
   &__results {
     width: 100%;
     margin: 2rem 0;
-    // padding: 0 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 }
 
-@media screen and (max-width: 1200px) {
-  // .search {
-  //   padding: 0;
-  // }
+@media screen and (max-width: 750px) {
+  .search__input {
+    font-size: 1.25rem;
+    padding: 0.5rem 1rem;
+  }
 }

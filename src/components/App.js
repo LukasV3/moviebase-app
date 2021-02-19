@@ -1,6 +1,6 @@
 import React from "react";
 import { Router, Route, Switch } from "react-router-dom";
-import "./scss/App.scss";
+import "./styles/App.scss";
 
 import history from "../history";
 import Navbar from "./Navbar.js";

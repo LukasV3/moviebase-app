@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import "./scss/Navbar.scss";
+import "./styles/Navbar.scss";
 import { clearFetchedMovies } from "../actions";
 
 const Navbar = (props) => {
