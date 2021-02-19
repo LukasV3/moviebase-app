@@ -18,7 +18,9 @@
       position: relative;
       background-color: white;
       height: 35rem;
-      width: 60%;
+      padding: 3rem 2rem;
+      margin: 0 2rem;
+      max-width: 60rem;
       border-radius: 10px;
       display: flex;
       align-items: center;
@@ -129,31 +131,17 @@
   }
 }
 
-@media screen and (max-width: 1150px) {
-  .movie-detail {
-    &__modal--body {
-      padding: 3rem 2rem;
-      width: 75%;
-    }
-  }
-}
-
 @media screen and (max-width: 950px) {
   .movie-detail {
-    &__modal--body {
-      width: 95%;
-    }
-
     &__content {
       grid-template-columns: 30% 70%;
     }
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 725px) {
   .movie-detail {
     &__modal--body {
-      width: 95%;
       padding: 1rem;
     }
 
@@ -173,11 +161,6 @@
 
 @media screen and (max-width: 475px) {
   .movie-detail {
-    &__modal--body {
-      width: 95%;
-      padding: 1rem;
-    }
-
     &__main-image--div {
       display: none;
     }
