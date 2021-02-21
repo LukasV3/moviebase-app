@@ -52,9 +52,14 @@
   }
 
   &__info {
-    padding: 2rem 0 0 2.5rem;
+    padding: 0rem 0 0 2.5rem;
     display: grid;
-    grid-template-rows: 10rem;
+    row-gap: 3rem;
+    grid-template-rows: 9rem 10rem;
+
+    & div {
+      align-self: flex-end;
+    }
   }
 
   &__title {
@@ -103,6 +108,7 @@
     height: 18rem;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
     border-radius: 10px 10px 0 0;
+    background-color: #010b26;
   }
 
   &__background-image {
@@ -112,6 +118,7 @@
     height: 100%;
     display: block;
     filter: brightness(35%);
+    color: #fff;
   }
 
   &__back-button {
@@ -150,7 +157,7 @@
     }
 
     &__info {
-      padding: 2rem 0 0 1.25rem;
+      padding: 0rem 0 0 1.25rem;
     }
 
     &__rating {
@@ -166,7 +173,7 @@
     }
 
     &__info {
-      grid-template-rows: 11rem;
+      grid-template-rows: 9.5rem;
     }
 
     &__content {
